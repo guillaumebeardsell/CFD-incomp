@@ -1,0 +1,6 @@
+2026-04-23 01:07:29,416 INFO simulation sim_20260423_010729_5b2c546c started; log=sim_20260423_010729_5b2c546c.log  residuals=sim_20260423_010729_5b2c546c_residuals.csv
+2026-04-23 01:07:29,418 INFO solve start: grid=48x12 (4.000x1.000) mode=steady Re=40.0  polygon=0 pts, solid_cells=0 / 576
+2026-04-23 01:07:30,138 INFO [steady      0] dt=4.167e-02  R_mom=0.000e+00  div*=0.00e+00  mg=1
+2026-04-23 01:07:30,169 INFO steady converged @ 19 iters  R_mom=0.000e+00 / R0=1.000e-30
+2026-04-23 01:07:30,179 INFO solve done: iters=20 converged=True elapsed=0.8s
+2026-04-23 01:07:30,253 INFO residuals workbook written: sim_20260423_010729_5b2c546c_residuals.xlsx

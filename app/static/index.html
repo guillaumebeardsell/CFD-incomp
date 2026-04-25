@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>CFD Studio — Incompressible</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">CFD Studio</span>
+    <span id="status" class="status">Draw an obstacle</span>
+  </header>
+
+  <nav class="steps">
+    <button class="step active" data-step="draw">1. Draw</button>
+    <button class="step" data-step="bc">2. BCs</button>
+    <button class="step" data-step="solve">3. Solve</button>
+  </nav>
+
+  <main class="stage">
+    <canvas id="canvas"></canvas>
+    <button id="btn-immersive" class="immersive-btn" aria-label="Toggle full screen">⛶</button>
+  </main>
+
+  <section id="toolbar-draw" class="toolbar">
+    <button id="btn-undo" class="ghost">Undo</button>
+    <button id="btn-clear" class="ghost">Clear</button>
+    <span class="spacer"></span>
+    <button id="btn-draw-next" class="primary">Next &rarr;</button>
+  </section>
+
+  <section id="toolbar-bc" class="toolbar hidden">
+    <button id="btn-bc-back" class="ghost">&larr; Back</button>
+    <button id="btn-bc-preset" class="ghost">Preset defaults</button>
+    <span class="spacer"></span>
+    <button id="btn-bc-next" class="primary">Next &rarr;</button>
+  </section>
+
+  <section id="toolbar-solve" class="toolbar hidden">
+    <button id="btn-solve-back" class="ghost">&larr; Back</button>
+    <label class="inline">
+      Grid
+      <select id="fidelity">
+        <option value="coarse">Coarse (200&times;100)</option>
+        <option value="medium" selected>Medium (320&times;160)</option>
+        <option value="fine">Fine (480&times;240)</option>
+      </select>
+    </label>
+    <label class="inline">
+      Mode
+      <select id="mode">
+        <option value="steady" selected>Steady-state</option>
+        <option value="transient">Time-evolving</option>
+      </select>
+    </label>
+    <label class="inline">
+      Re
+      <input type="number" id="re-input" step="any" value="40" style="width:5.5em">
+    </label>
+    <span class="spacer"></span>
+    <button id="btn-solve" class="primary">Solve</button>
+  </section>
+
+  <section id="toolbar-view" class="toolbar hidden">
+    <button id="btn-view-back" class="ghost">&larr; Edit</button>
+    <label class="inline">
+      Field
+      <select id="field-select">
+        <option value="vel_mag" selected>|u|</option>
+        <option value="u">u</option>
+        <option value="v">v</option>
+        <option value="p">Pressure</option>
+        <option value="vorticity">Vorticity</option>
+        <option value="res_mom">Momentum residual</option>
+        <option value="res_div">Continuity residual</option>
+      </select>
+    </label>
+    <label class="inline"><input type="checkbox" id="show-arrows"> Arrows</label>
+    <label class="inline"><input type="checkbox" id="show-streams" checked> Streamlines</label>
+  </section>
+
+  <div id="bc-sheet" class="sheet hidden">
+    <div class="sheet-head">
+      <span id="bc-sheet-title">Boundary</span>
+      <button id="bc-sheet-close" class="ghost">Close</button>
+    </div>
+    <div class="sheet-body">
+      <label>Type
+        <select id="bc-type"></select>
+      </label>
+      <div id="bc-params"></div>
+      <button id="bc-apply" class="primary">Apply</button>
+    </div>
+  </div>
+
+  <div id="progress" class="overlay hidden">
+    <div class="card progress-card">
+      <div class="progress-head">
+        <div>
+          <div id="progress-title" class="progress-title">Initializing&hellip;</div>
+          <div id="progress-subtitle" class="progress-subtitle"></div>
+        </div>
+        <div id="progress-percent" class="progress-percent">0%</div>
+      </div>
+      <div class="progress-track"><div id="progress-bar"></div></div>
+      <div class="progress-stats">
+        <div class="stat">
+          <div class="stat-label" id="stat-a-label">Residual</div>
+          <div class="stat-value" id="stat-a-value">&mdash;</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label" id="stat-b-label">Iteration</div>
+          <div class="stat-value" id="stat-b-value">&mdash;</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Elapsed</div>
+          <div class="stat-value" id="stat-c-value">&mdash;</div>
+        </div>
+      </div>
+      <button id="btn-stop-solve" class="ghost progress-stop">Stop</button>
+    </div>
+  </div>
+
+  <script src="js/draw.js"></script>
+  <script src="js/bc.js"></script>
+  <script src="js/solve.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

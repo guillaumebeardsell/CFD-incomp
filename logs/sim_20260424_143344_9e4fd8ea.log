@@ -1,0 +1,62 @@
+2026-04-24 14:33:44,311 INFO simulation sim_20260424_143344_9e4fd8ea started; log=sim_20260424_143344_9e4fd8ea.log  residuals=sim_20260424_143344_9e4fd8ea_residuals.csv
+2026-04-24 14:33:44,315 INFO solve start: grid=200x100 (20.000x10.000) mode=steady Re=40.0  polygon=14 pts, solid_cells=582 / 20000
+2026-04-24 14:33:44,316 INFO   polygon bbox: x=[9.477,13.560] y=[3.647,6.120]
+2026-04-24 14:33:45,109 ERROR solver failed
+Traceback (most recent call last):
+  File "/workspaces/CFD-incomp/app/app.py", line 168, in _run_job
+    result = solver.solve()
+  File "/workspaces/CFD-incomp/app/solver/solver.py", line 112, in solve
+    converged = self._loop_steady(
+        max_iters=self.cfg.max_iters,
+        res_drop=self.cfg.res_drop,
+        alpha_p=self.cfg.alpha_p_steady,
+    )
+  File "/workspaces/CFD-incomp/app/solver/solver.py", line 203, in _loop_steady
+    r_mom, info = self._step(dt, alpha_p)
+                  ~~~~~~~~~~^^^^^^^^^^^^^
+  File "/workspaces/CFD-incomp/app/solver/solver.py", line 167, in _step
+    u_star, v_star, a_P = predictor(
+                          ~~~~~~~~~^
+        u_old, v_old, p_old, self.chi,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        dt, self.dx, self.dy, self.nu, self.cfg.eta, self.boundaries,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        force_x=self.force_x, force_y=self.force_y,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/workspaces/CFD-incomp/app/solver/predictor.py", line 20, in predictor
+    return predictor_kernel(
+        u, v, u_pad, v_pad, p_pad, chi_b, dt, dx, dy, nu, eta,
+        float(force_x), float(force_y),
+    )
+  File "/home/vscode/.local/lib/python3.13/site-packages/numba/core/dispatcher.py", line 443, in _compile_for_args
+    raise e
+  File "/home/vscode/.local/lib/python3.13/site-packages/numba/core/dispatcher.py", line 376, in _compile_for_args
+    return_val = self.compile(tuple(argtypes))
+  File "/home/vscode/.local/lib/python3.13/site-packages/numba/core/dispatcher.py", line 889, in compile
+    cres = self._cache.load_overload(sig, self.targetctx)
+  File "/home/vscode/.local/lib/python3.13/site-packages/numba/core/caching.py", line 721, in load_overload
+    return self._load_overload(sig, target_context)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/numba/core/caching.py", line 728, in _load_overload
+    data = self._cache_file.load(key)
+  File "/home/vscode/.local/lib/python3.13/site-packages/numba/core/caching.py", line 576, in load
+    return self._load_data(data_name)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/numba/core/caching.py", line 618, in _load_data
+    tup = pickle.loads(data)
+  File "/home/vscode/.local/lib/python3.13/site-packages/numba/core/environment.py", line 51, in _rebuild_env
+    mod = importlib.import_module(modname)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1319, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app.solver'; 'app' is not a package
+2026-04-24 14:33:45,148 INFO residuals workbook written: sim_20260424_143344_9e4fd8ea_residuals.xlsx

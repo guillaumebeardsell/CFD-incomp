@@ -1,0 +1,10 @@
+cantera
+numpy
+scipy
+shapely
+pillow
+openpyxl
+flask
+pytest
+awscli
+boto3

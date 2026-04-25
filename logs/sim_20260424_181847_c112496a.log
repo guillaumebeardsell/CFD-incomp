@@ -1,0 +1,36 @@
+2026-04-24 18:18:47,436 INFO simulation sim_20260424_181847_c112496a started; log=sim_20260424_181847_c112496a.log  residuals=sim_20260424_181847_c112496a_residuals.csv
+2026-04-24 18:18:47,438 INFO solve start: grid=200x100 (20.000x10.000) mode=steady Re=40.0  polygon=28 pts, solid_cells=1391 / 20000
+2026-04-24 18:18:47,438 INFO   polygon bbox: x=[6.267,13.938] y=[3.574,7.647]
+2026-04-24 18:18:48,904 INFO [steady      0] dt=5.000e-02  R_mom=1.600e+00  div*=4.99e+00  mg=3
+2026-04-24 18:18:51,181 INFO [steady    100] dt=2.423e-02  R_mom=4.528e-02  div*=1.09e-01  mg=2
+2026-04-24 18:18:53,321 INFO [steady    200] dt=2.428e-02  R_mom=3.807e-02  div*=1.29e-02  mg=2
+2026-04-24 18:18:55,511 INFO [steady    300] dt=2.457e-02  R_mom=3.792e-02  div*=1.30e-02  mg=1
+2026-04-24 18:18:57,532 INFO [steady    400] dt=2.504e-02  R_mom=3.791e-02  div*=1.14e-02  mg=1
+2026-04-24 18:18:59,499 INFO [steady    500] dt=2.525e-02  R_mom=3.782e-02  div*=1.08e-02  mg=2
+2026-04-24 18:19:01,591 INFO [steady    600] dt=2.494e-02  R_mom=3.864e-02  div*=4.62e-03  mg=2
+2026-04-24 18:19:03,903 INFO [steady    700] dt=2.497e-02  R_mom=3.930e-02  div*=8.01e-03  mg=2
+2026-04-24 18:19:06,054 INFO [steady    800] dt=2.537e-02  R_mom=4.071e-02  div*=1.48e-02  mg=2
+2026-04-24 18:19:07,877 INFO [steady    900] dt=2.484e-02  R_mom=4.202e-02  div*=1.22e-02  mg=2
+2026-04-24 18:19:09,665 INFO [steady   1000] dt=2.422e-02  R_mom=3.640e-02  div*=4.18e-03  mg=2
+2026-04-24 18:19:11,034 INFO [steady   1100] dt=2.407e-02  R_mom=2.780e-02  div*=4.08e-03  mg=2
+2026-04-24 18:19:12,212 INFO [steady   1200] dt=2.333e-02  R_mom=2.210e-02  div*=7.57e-03  mg=2
+2026-04-24 18:19:13,860 INFO [steady   1300] dt=2.307e-02  R_mom=1.821e-02  div*=5.69e-03  mg=2
+2026-04-24 18:19:14,989 INFO [steady   1400] dt=2.346e-02  R_mom=1.254e-02  div*=1.69e-03  mg=2
+2026-04-24 18:19:16,414 INFO [steady   1500] dt=2.464e-02  R_mom=7.121e-03  div*=1.86e-03  mg=2
+2026-04-24 18:19:18,250 INFO [steady   1600] dt=2.515e-02  R_mom=5.188e-03  div*=2.77e-03  mg=2
+2026-04-24 18:19:19,756 INFO [steady   1700] dt=2.499e-02  R_mom=3.733e-03  div*=2.03e-03  mg=2
+2026-04-24 18:19:21,305 INFO [steady   1800] dt=2.489e-02  R_mom=2.158e-03  div*=8.64e-04  mg=2
+2026-04-24 18:19:23,190 INFO [steady   1900] dt=2.484e-02  R_mom=1.317e-03  div*=1.65e-04  mg=2
+2026-04-24 18:19:24,797 INFO [steady   2000] dt=2.485e-02  R_mom=1.201e-03  div*=5.10e-04  mg=1
+2026-04-24 18:19:25,919 INFO [steady   2100] dt=2.488e-02  R_mom=1.271e-03  div*=6.61e-04  mg=1
+2026-04-24 18:19:26,801 INFO [steady   2200] dt=2.492e-02  R_mom=1.255e-03  div*=4.98e-04  mg=2
+2026-04-24 18:19:28,031 INFO [steady   2300] dt=2.495e-02  R_mom=1.015e-03  div*=1.65e-04  mg=2
+2026-04-24 18:19:29,943 INFO [steady   2400] dt=2.495e-02  R_mom=6.498e-04  div*=1.22e-04  mg=2
+2026-04-24 18:19:32,491 INFO [steady   2500] dt=2.494e-02  R_mom=4.865e-04  div*=2.31e-04  mg=2
+2026-04-24 18:19:34,270 INFO [steady   2600] dt=2.493e-02  R_mom=4.265e-04  div*=1.77e-04  mg=2
+2026-04-24 18:19:35,850 INFO [steady   2700] dt=2.492e-02  R_mom=2.802e-04  div*=6.43e-05  mg=2
+2026-04-24 18:19:37,646 INFO [steady   2800] dt=2.492e-02  R_mom=1.563e-04  div*=1.93e-05  mg=2
+2026-04-24 18:19:39,392 INFO [steady   2900] dt=2.492e-02  R_mom=1.188e-04  div*=5.09e-05  mg=2
+2026-04-24 18:19:40,208 INFO steady converged @ 2950 iters  R_mom=1.087e-04 / R0=1.088e+00
+2026-04-24 18:19:40,210 INFO solve done: iters=2951 converged=True elapsed=52.8s
+2026-04-24 18:19:40,435 INFO residuals workbook written: sim_20260424_181847_c112496a_residuals.xlsx

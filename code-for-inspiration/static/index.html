@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>CFD Studio</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">CFD Studio</span>
+    <span id="status" class="status">Draw an obstacle</span>
+  </header>
+
+  <nav class="steps">
+    <button class="step active" data-step="draw">1. Draw</button>
+    <button class="step" data-step="bc">2. BCs</button>
+    <button class="step" data-step="solve">3. Solve</button>
+  </nav>
+
+  <main class="stage">
+    <canvas id="canvas"></canvas>
+    <button id="btn-immersive" class="immersive-btn" aria-label="Toggle full screen">⛶</button>
+  </main>
+
+  <!-- Bottom toolbar varies by step -->
+  <section id="toolbar-draw" class="toolbar">
+    <button id="btn-undo" class="ghost">Undo</button>
+    <button id="btn-clear" class="ghost">Clear</button>
+    <span class="spacer"></span>
+    <button id="btn-draw-next" class="primary">Next &rarr;</button>
+  </section>
+
+  <section id="toolbar-bc" class="toolbar hidden">
+    <button id="btn-bc-back" class="ghost">&larr; Back</button>
+    <button id="btn-bc-preset" class="ghost">Preset: Subsonic</button>
+    <span class="spacer"></span>
+    <button id="btn-bc-next" class="primary">Next &rarr;</button>
+  </section>
+
+  <section id="toolbar-solve" class="toolbar hidden">
+    <button id="btn-solve-back" class="ghost">&larr; Back</button>
+    <label class="inline">
+      Grid
+      <select id="fidelity">
+        <option value="coarse">Coarse (160&times;80)</option>
+        <option value="medium" selected>Medium (240&times;120)</option>
+        <option value="fine">Fine (360&times;180)</option>
+      </select>
+    </label>
+    <label class="inline">
+      Mode
+      <select id="mode">
+        <option value="steady" selected>Steady-state</option>
+        <option value="transient">Time-evolving</option>
+      </select>
+    </label>
+    <label class="inline">
+      Scheme
+      <select id="scheme">
+        <option value="explicit" selected>Standard (RK3)</option>
+        <option value="irs">Fast (residual smoothing)</option>
+      </select>
+    </label>
+    <label class="inline">
+      <input type="checkbox" id="viscous"> Viscous
+    </label>
+    <span class="spacer"></span>
+    <button id="btn-solve" class="primary">Solve</button>
+  </section>
+
+  <section id="toolbar-view" class="toolbar hidden">
+    <button id="btn-view-back" class="ghost">&larr; Edit</button>
+    <label class="inline">
+      Field
+      <select id="field-select">
+        <option value="mach" selected>Mach</option>
+        <option value="p">Pressure</option>
+        <option value="rho">Density</option>
+        <option value="u">u</option>
+        <option value="v">v</option>
+        <option value="T">Temperature</option>
+        <option value="res">Residual</option>
+      </select>
+    </label>
+    <label class="inline"><input type="checkbox" id="show-arrows"> Arrows</label>
+    <label class="inline"><input type="checkbox" id="show-streams" checked> Streamlines</label>
+  </section>
+
+  <!-- BC editor bottom sheet -->
+  <div id="bc-sheet" class="sheet hidden">
+    <div class="sheet-head">
+      <span id="bc-sheet-title">Boundary</span>
+      <button id="bc-sheet-close" class="ghost">Close</button>
+    </div>
+    <div class="sheet-body">
+      <label>Type
+        <select id="bc-type"></select>
+      </label>
+      <div id="bc-params"></div>
+      <button id="bc-apply" class="primary">Apply</button>
+    </div>
+  </div>
+
+  <!-- Solve progress overlay -->
+  <div id="progress" class="overlay hidden">
+    <div class="card">
+      <div id="progress-msg">Solving&hellip;</div>
+      <div class="bar"><div id="progress-bar"></div></div>
+      <div id="progress-detail" class="muted"></div>
+    </div>
+  </div>
+
+  <script src="js/draw.js"></script>
+  <script src="js/bc.js"></script>
+  <script src="js/solve.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+2026-04-24 17:56:05,605 INFO simulation sim_20260424_175605_ba292f21 started; log=sim_20260424_175605_ba292f21.log  residuals=sim_20260424_175605_ba292f21_residuals.csv
+2026-04-24 17:56:05,612 INFO solve start: grid=200x100 (20.000x10.000) mode=steady Re=40.0  polygon=16 pts, solid_cells=517 / 20000
+2026-04-24 17:56:05,612 INFO   polygon bbox: x=[6.445,12.633] y=[4.217,6.072]
+2026-04-24 17:56:07,299 INFO [steady      0] dt=5.000e-02  R_mom=8.710e-01  div*=4.99e+00  mg=3
+2026-04-24 17:56:09,409 INFO [steady    100] dt=3.406e-02  R_mom=3.860e-02  div*=2.06e-02  mg=2
+2026-04-24 17:56:10,419 INFO steady cancelled @ 147 iters (last R_mom=3.526e-02)
+2026-04-24 17:56:10,420 INFO solve done: iters=147 converged=False elapsed=4.8s
+2026-04-24 17:56:10,509 INFO residuals workbook written: sim_20260424_175605_ba292f21_residuals.xlsx

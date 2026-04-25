@@ -1,0 +1,70 @@
+2026-04-24 19:22:44,244 INFO simulation sim_20260424_192244_98eb7892 started; log=sim_20260424_192244_98eb7892.log  residuals=sim_20260424_192244_98eb7892_residuals.csv
+2026-04-24 19:22:44,250 INFO solve start: grid=200x100 (20.000x10.000) mode=steady Re=40.0  polygon=20 pts, solid_cells=2880 / 20000
+2026-04-24 19:22:44,251 INFO   polygon bbox: x=[5.713,14.922] y=[2.557,8.772]
+2026-04-24 19:22:46,827 INFO [steady      0] dt=5.000e-02  R_mom=2.342e+00  div*=4.99e+00  mg=3
+2026-04-24 19:22:48,703 INFO [steady    100] dt=1.147e-02  R_mom=1.901e-01  div*=6.94e-02  mg=2
+2026-04-24 19:22:50,900 INFO [steady    200] dt=1.121e-02  R_mom=1.945e-01  div*=5.68e-02  mg=2
+2026-04-24 19:22:53,577 INFO [steady    300] dt=1.111e-02  R_mom=2.060e-01  div*=4.29e-02  mg=2
+2026-04-24 19:22:56,541 INFO [steady    400] dt=1.121e-02  R_mom=1.986e-01  div*=2.42e-02  mg=2
+2026-04-24 19:22:58,166 INFO [steady    500] dt=1.151e-02  R_mom=1.819e-01  div*=1.46e-02  mg=2
+2026-04-24 19:23:00,698 INFO [steady    600] dt=1.185e-02  R_mom=1.655e-01  div*=1.10e-02  mg=2
+2026-04-24 19:23:02,608 INFO [steady    700] dt=1.220e-02  R_mom=1.499e-01  div*=1.20e-02  mg=2
+2026-04-24 19:23:04,209 INFO [steady    800] dt=1.261e-02  R_mom=1.171e-01  div*=2.57e-02  mg=2
+2026-04-24 19:23:05,956 INFO [steady    900] dt=1.372e-02  R_mom=1.037e-01  div*=4.78e-02  mg=2
+2026-04-24 19:23:07,857 INFO [steady   1000] dt=1.369e-02  R_mom=1.166e-01  div*=2.84e-02  mg=2
+2026-04-24 19:23:09,972 INFO [steady   1100] dt=1.305e-02  R_mom=1.289e-01  div*=2.96e-02  mg=2
+2026-04-24 19:23:11,476 INFO [steady   1200] dt=1.240e-02  R_mom=1.087e-01  div*=1.55e-02  mg=2
+2026-04-24 19:23:13,363 INFO [steady   1300] dt=1.272e-02  R_mom=6.975e-02  div*=6.00e-03  mg=2
+2026-04-24 19:23:14,851 INFO [steady   1400] dt=1.367e-02  R_mom=4.631e-02  div*=7.64e-03  mg=2
+2026-04-24 19:23:17,247 INFO [steady   1500] dt=1.353e-02  R_mom=4.170e-02  div*=7.30e-03  mg=2
+2026-04-24 19:23:19,331 INFO [steady   1600] dt=1.331e-02  R_mom=4.217e-02  div*=6.60e-03  mg=2
+2026-04-24 19:23:22,012 INFO [steady   1700] dt=1.312e-02  R_mom=3.777e-02  div*=5.11e-03  mg=2
+2026-04-24 19:23:24,536 INFO [steady   1800] dt=1.389e-02  R_mom=2.632e-02  div*=4.35e-03  mg=2
+2026-04-24 19:23:26,774 INFO [steady   1900] dt=1.453e-02  R_mom=1.684e-02  div*=4.28e-03  mg=2
+2026-04-24 19:23:29,497 INFO [steady   2000] dt=1.454e-02  R_mom=1.565e-02  div*=5.68e-03  mg=2
+2026-04-24 19:23:32,417 INFO [steady   2100] dt=1.447e-02  R_mom=1.372e-02  div*=4.16e-03  mg=2
+2026-04-24 19:23:34,245 INFO [steady   2200] dt=1.429e-02  R_mom=1.082e-02  div*=2.54e-03  mg=2
+2026-04-24 19:23:36,175 INFO [steady   2300] dt=1.423e-02  R_mom=8.406e-03  div*=1.51e-03  mg=2
+2026-04-24 19:23:37,728 INFO [steady   2400] dt=1.428e-02  R_mom=6.919e-03  div*=2.21e-03  mg=2
+2026-04-24 19:23:39,744 INFO [steady   2500] dt=1.437e-02  R_mom=5.969e-03  div*=2.01e-03  mg=2
+2026-04-24 19:23:41,500 INFO [steady   2600] dt=1.446e-02  R_mom=5.619e-03  div*=1.04e-03  mg=2
+2026-04-24 19:23:42,871 INFO [steady   2700] dt=1.451e-02  R_mom=4.503e-03  div*=8.85e-04  mg=2
+2026-04-24 19:23:44,937 INFO [steady   2800] dt=1.451e-02  R_mom=3.584e-03  div*=1.08e-03  mg=2
+2026-04-24 19:23:47,268 INFO [steady   2900] dt=1.446e-02  R_mom=3.243e-03  div*=1.25e-03  mg=1
+2026-04-24 19:23:48,576 INFO [steady   3000] dt=1.441e-02  R_mom=3.041e-03  div*=7.80e-04  mg=1
+2026-04-24 19:23:50,787 INFO [steady   3100] dt=1.437e-02  R_mom=2.647e-03  div*=6.41e-04  mg=2
+2026-04-24 19:23:53,231 INFO [steady   3200] dt=1.437e-02  R_mom=2.177e-03  div*=4.43e-04  mg=2
+2026-04-24 19:23:54,458 INFO [steady   3300] dt=1.438e-02  R_mom=1.835e-03  div*=5.71e-04  mg=1
+2026-04-24 19:23:55,553 INFO [steady   3400] dt=1.441e-02  R_mom=1.692e-03  div*=4.39e-04  mg=1
+2026-04-24 19:23:56,695 INFO [steady   3500] dt=1.443e-02  R_mom=1.565e-03  div*=2.35e-04  mg=2
+2026-04-24 19:23:58,758 INFO [steady   3600] dt=1.443e-02  R_mom=1.339e-03  div*=1.37e-04  mg=2
+2026-04-24 19:24:01,312 INFO [steady   3700] dt=1.443e-02  R_mom=1.146e-03  div*=3.03e-04  mg=1
+2026-04-24 19:24:02,574 INFO [steady   3800] dt=1.442e-02  R_mom=1.079e-03  div*=3.05e-04  mg=1
+2026-04-24 19:24:04,226 INFO [steady   3900] dt=1.440e-02  R_mom=1.026e-03  div*=2.50e-04  mg=1
+2026-04-24 19:24:05,516 INFO [steady   4000] dt=1.440e-02  R_mom=9.167e-04  div*=2.27e-04  mg=2
+2026-04-24 19:24:07,331 INFO [steady   4100] dt=1.439e-02  R_mom=7.933e-04  div*=1.74e-04  mg=1
+2026-04-24 19:24:08,580 INFO [steady   4200] dt=1.440e-02  R_mom=7.055e-04  div*=1.30e-04  mg=1
+2026-04-24 19:24:09,949 INFO [steady   4300] dt=1.440e-02  R_mom=6.527e-04  div*=8.44e-05  mg=1
+2026-04-24 19:24:11,129 INFO [steady   4400] dt=1.441e-02  R_mom=6.015e-04  div*=7.08e-05  mg=2
+2026-04-24 19:24:12,900 INFO [steady   4500] dt=1.441e-02  R_mom=5.383e-04  div*=6.07e-05  mg=2
+2026-04-24 19:24:13,941 INFO [steady   4600] dt=1.441e-02  R_mom=4.887e-04  div*=8.98e-05  mg=1
+2026-04-24 19:24:14,737 INFO [steady   4700] dt=1.440e-02  R_mom=4.632e-04  div*=1.09e-04  mg=1
+2026-04-24 19:24:16,068 INFO [steady   4800] dt=1.440e-02  R_mom=4.370e-04  div*=1.15e-04  mg=1
+2026-04-24 19:24:17,463 INFO [steady   4900] dt=1.440e-02  R_mom=3.988e-04  div*=1.02e-04  mg=1
+2026-04-24 19:24:18,600 INFO [steady   5000] dt=1.440e-02  R_mom=3.588e-04  div*=8.51e-05  mg=1
+2026-04-24 19:24:19,684 INFO [steady   5100] dt=1.440e-02  R_mom=3.272e-04  div*=7.06e-05  mg=1
+2026-04-24 19:24:21,071 INFO [steady   5200] dt=1.440e-02  R_mom=3.032e-04  div*=5.92e-05  mg=1
+2026-04-24 19:24:22,240 INFO [steady   5300] dt=1.440e-02  R_mom=2.801e-04  div*=5.16e-05  mg=1
+2026-04-24 19:24:23,264 INFO [steady   5400] dt=1.440e-02  R_mom=2.562e-04  div*=5.04e-05  mg=1
+2026-04-24 19:24:24,647 INFO [steady   5500] dt=1.440e-02  R_mom=2.367e-04  div*=5.43e-05  mg=1
+2026-04-24 19:24:26,174 INFO [steady   5600] dt=1.440e-02  R_mom=2.220e-04  div*=5.74e-05  mg=1
+2026-04-24 19:24:28,095 INFO [steady   5700] dt=1.440e-02  R_mom=2.073e-04  div*=5.54e-05  mg=1
+2026-04-24 19:24:30,185 INFO [steady   5800] dt=1.440e-02  R_mom=1.905e-04  div*=4.95e-05  mg=1
+2026-04-24 19:24:32,406 INFO [steady   5900] dt=1.440e-02  R_mom=1.740e-04  div*=4.32e-05  mg=1
+2026-04-24 19:24:34,117 INFO [steady   6000] dt=1.440e-02  R_mom=1.599e-04  div*=3.83e-05  mg=1
+2026-04-24 19:24:36,034 INFO [steady   6100] dt=1.440e-02  R_mom=1.481e-04  div*=3.41e-05  mg=1
+2026-04-24 19:24:38,077 INFO [steady   6200] dt=1.440e-02  R_mom=1.368e-04  div*=3.09e-05  mg=1
+2026-04-24 19:24:39,107 INFO [steady   6300] dt=1.440e-02  R_mom=1.259e-04  div*=2.91e-05  mg=1
+2026-04-24 19:24:39,327 INFO steady converged @ 6315 iters  R_mom=1.243e-04 / R0=1.243e+00
+2026-04-24 19:24:39,328 INFO solve done: iters=6316 converged=True elapsed=115.1s
+2026-04-24 19:24:39,709 INFO residuals workbook written: sim_20260424_192244_98eb7892_residuals.xlsx
