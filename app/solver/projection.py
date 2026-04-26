@@ -34,6 +34,6 @@ def project(u_star, v_star, p_old, a_P, dt, dx, dy, bcs,
     return u_new, v_new, p_new, p_prime, {
         "mg_cycles": n_cycles,
         "mg_resid": float(resid),
-        "div_star_max": float(np.max(np.abs(div_star))),
+        "div_star_max": float(xp.max(xp.abs(div_star))),
         "div_star": div_star,
     }

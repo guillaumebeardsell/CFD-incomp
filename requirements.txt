@@ -9,3 +9,8 @@ flask
 pytest
 awscli
 boto3
+# Optional GPU backend. Install only on a host with CUDA + NVIDIA GPU and
+# pick the wheel matching your CUDA version. Not required for the default
+# (NumPy/Numba) path. Activate with CFD_BACKEND=cupy.
+# cupy-cuda12x
+# cupy-cuda11x

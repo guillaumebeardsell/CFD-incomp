@@ -137,11 +137,16 @@ BC_PSI   = (DIRICHLET, DIRICHLET, DIRICHLET, DIRICHLET)
 def solve(rhs, dx, dy, tol=1e-4, max_cycles=30, n_smooth=2, p0=None,
           bc_sides=BC_PCORR):
     p = _fmg_init(rhs, dx, dy, bc_sides, n_smooth) if p0 is None else p0.copy()
-    rhs_norm = float(xp.linalg.norm(rhs)) + 1e-30
+    # Avoid `xp.linalg.norm` here: on small arrays (~20k cells) the BLAS
+    # dnrm2 dispatch is overhead-bound; a plain ufunc reduction is much
+    # faster on either backend.
+    def _norm(a):
+        return float(xp.sqrt(xp.sum(a * a)))
+    rhs_norm = _norm(rhs) + 1e-30
     rel = 1.0
     for c in range(max_cycles):
         p = _vcycle(p, rhs, dx, dy, bc_sides, n_smooth=n_smooth)
-        rel = float(xp.linalg.norm(rhs - apply_A(p, dx, dy, bc_sides))) / rhs_norm
+        rel = _norm(rhs - apply_A(p, dx, dy, bc_sides)) / rhs_norm
         if rel < tol:
             return p, c + 1, rel
     return p, max_cycles, rel
