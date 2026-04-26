@@ -6,6 +6,7 @@ shapely
 pillow
 openpyxl
 flask
+gunicorn
 pytest
 awscli
 boto3
