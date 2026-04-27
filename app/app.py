@@ -12,6 +12,7 @@ from __future__ import annotations
 import base64
 import csv
 import datetime as _dt
+import hmac
 import logging
 import os
 import sys
@@ -28,7 +29,7 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-from flask import Flask, jsonify, request, send_from_directory   # noqa: E402
+from flask import Flask, Response, jsonify, request, send_from_directory   # noqa: E402
 
 try:                                                             # pragma: no cover
     from app.solver import Solver, SolverConfig, FIDELITY
@@ -43,14 +44,32 @@ except ModuleNotFoundError:   # when running `python app/app.py`
 
 
 _STATIC_DIR = str(Path(__file__).resolve().parent / "static")
-_LOG_DIR = Path(__file__).resolve().parent.parent / "logs"
-_LOG_DIR.mkdir(exist_ok=True)
+if getattr(sys, "frozen", False):
+    _LOG_DIR = Path.home() / ".cfd-incomp" / "logs"
+else:
+    _LOG_DIR = Path(__file__).resolve().parent.parent / "logs"
+_LOG_DIR.mkdir(parents=True, exist_ok=True)
 app = Flask(__name__, static_folder=_STATIC_DIR, static_url_path="")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("cfd")
 
 _jobs: dict[str, dict] = {}
 _jobs_lock = threading.Lock()
+
+_AUTH_PASSWORD = os.environ.get("APP_PASSWORD")
+
+
+@app.before_request
+def _require_password():
+    if not _AUTH_PASSWORD:
+        return None
+    auth = request.authorization
+    if auth and hmac.compare_digest(auth.password or "", _AUTH_PASSWORD):
+        return None
+    return Response(
+        "Authentication required.", 401,
+        {"WWW-Authenticate": 'Basic realm="cfd"'},
+    )
 
 
 def _b64(arr, dtype=np.float32) -> str:
